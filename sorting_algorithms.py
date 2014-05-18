@@ -67,7 +67,7 @@ def main():
      have O(n**2) running time.
     """
     for n in range(1000, 11000, 1000):
-        int_list = [n for n in range(n, 1, -1)]  # this is the worst case when the array is sorted in reverse order
+        int_list = [n for n in range(n, 0, -1)]  # this is the worst case when the array is sorted in reverse order
         thread_selection_sort = threading.Timer(1, selection_sort, (int_list[:],))
         # threading.Thread(target=selection_sort, args=(int_list[:],))
         thread_insertion_sort = threading.Timer(1, insertion_sort, (int_list[:],))
