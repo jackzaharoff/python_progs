@@ -1,4 +1,3 @@
-import random
 import threading
 
 
@@ -67,9 +66,8 @@ def main():
      selection and insertion sort. Merge sort has O(nlog(n)) while insertion and selection sort
      have O(n**2) running time.
     """
-    for n in range(1000, 10000, 1000):
-        int_list = random.sample(range(1000000), n)
-        int_list.sort(reverse=True)  # this is the worst case when the array is sorted in reverse order
+    for n in range(1000, 11000, 1000):
+        int_list = [n for n in range(n, 1, -1)]  # this is the worst case when the array is sorted in reverse order
         thread_selection_sort = threading.Timer(1, selection_sort, (int_list[:],))
         # threading.Thread(target=selection_sort, args=(int_list[:],))
         thread_insertion_sort = threading.Timer(1, insertion_sort, (int_list[:],))
